@@ -7,7 +7,7 @@ public class Main {
         ParentObject parentObjectWithIndicatorI = new ParentObject();
 
         MyPojoBuilder.withParentObject(parentObjectWithIndicatorI)
-                .withIndicatorI()
+                .withIndicatorI(true)
                 .build();
 
         System.out.println(parentObjectWithIndicatorI);
@@ -16,8 +16,8 @@ public class Main {
         ParentObject parentObjectWithIndicatorIAndK = new ParentObject();
 
         MyPojoBuilder.withParentObject(parentObjectWithIndicatorIAndK)
-                .withIndicatorI()
-                .withIndicatorK()
+                .withIndicatorI(true)
+                .withIndicatorK(false)
                 .build();
 
         System.out.println(parentObjectWithIndicatorIAndK);
@@ -26,9 +26,9 @@ public class Main {
         ParentObject parentObjectWithIndicatorIAndJAndK = new ParentObject();
 
         MyPojoBuilder.withParentObject(parentObjectWithIndicatorIAndJAndK)
-                .withIndicatorI()
-                .withIndicatorJ()
-                .withIndicatorK()
+                .withIndicatorI(false)
+                .withIndicatorJ(true)
+                .withIndicatorK(true)
                 .build();
 
         System.out.println(parentObjectWithIndicatorIAndJAndK);

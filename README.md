@@ -15,6 +15,6 @@ In reply to a [question](https://stackoverflow.com/q/58509357/7598851) at StackO
 ### Sample Output:
 ```log
 ParentObject{myPojo=MyPojo{indicatorI=true, indicatorJ=null, indicatorK=null}}
-ParentObject{myPojo=MyPojo{indicatorI=true, indicatorJ=null, indicatorK=true}}
-ParentObject{myPojo=MyPojo{indicatorI=true, indicatorJ=true, indicatorK=true}}
+ParentObject{myPojo=MyPojo{indicatorI=true, indicatorJ=null, indicatorK=false}}
+ParentObject{myPojo=MyPojo{indicatorI=false, indicatorJ=true, indicatorK=true}}
 ```

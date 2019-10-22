@@ -9,9 +9,9 @@ package demo;
  */
 public class MyPojoBuilder {
 
-    private boolean indicatorI;
-    private boolean indicatorJ;
-    private boolean indicatorK;
+    private Boolean indicatorI;
+    private Boolean indicatorJ;
+    private Boolean indicatorK;
     private ParentObject parentObject;
 
     private MyPojoBuilder(ParentObject parentObject) {
@@ -22,23 +22,23 @@ public class MyPojoBuilder {
         return new MyPojoBuilder(parentObject);
     }
 
-    public MyPojoBuilder withIndicatorI() {
-        indicatorI = true;
+    public MyPojoBuilder withIndicatorI(Boolean value) {
+        indicatorI = value;
         return this;
     }
 
-    public MyPojoBuilder withIndicatorJ() {
-        indicatorJ = true;
+    public MyPojoBuilder withIndicatorJ(Boolean value) {
+        indicatorJ = value;
         return this;
     }
 
-    public MyPojoBuilder withIndicatorK() {
-        indicatorK = true;
+    public MyPojoBuilder withIndicatorK(Boolean value) {
+        indicatorK = value;
         return this;
     }
 
     public void build() {
-        if (!indicatorI && !indicatorJ && !indicatorK) {
+        if (indicatorI == null && indicatorJ == null && indicatorK == null) {
             // Throw some exception instead???
             return;
         }
@@ -48,18 +48,9 @@ public class MyPojoBuilder {
         }
 
         MyPojo myPojo = new MyPojo();
-
-        if (indicatorI) {
-            myPojo.setIndicatorI(true);
-        }
-
-        if (indicatorJ) {
-            myPojo.setIndicatorJ(true);
-        }
-
-        if (indicatorK) {
-            myPojo.setIndicatorK(true);
-        }
+        myPojo.setIndicatorI(indicatorI);
+        myPojo.setIndicatorJ(indicatorJ);
+        myPojo.setIndicatorK(indicatorK);
 
         parentObject.setMyPojo(myPojo);
     }
